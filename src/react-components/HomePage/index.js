@@ -66,7 +66,7 @@ class HomePage extends React.Component {
             {this.renderSideNavigation()}
           </section>
      
-          <section>
+          <section className="col-sm-offset-2 col-sm-10">
             {
               this.state.productList
               ?

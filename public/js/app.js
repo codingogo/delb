@@ -19798,7 +19798,7 @@ var HomePage = function (_React$Component) {
           ),
           _react2.default.createElement(
             'section',
-            null,
+            { className: 'col-sm-offset-2 col-sm-10' },
             this.state.productList ? _react2.default.createElement(_ProductList2.default, { productList: this.state.productList }) : null
           )
         )
