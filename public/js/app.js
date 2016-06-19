@@ -19752,22 +19752,53 @@ var HomePage = function (_React$Component) {
   }
 
   _createClass(HomePage, [{
-    key: 'render',
-    value: function render() {
+    key: 'renderBanner',
+    value: function renderBanner() {
       return _react2.default.createElement(
         'section',
         null,
         _react2.default.createElement(
           'header',
           null,
-          _react2.default.createElement('img', { src: 'http://publishersconvention.com/wp-content/uploads/2014/12/colorful-triangles-background-800x300.jpg', width: '100%', height: '170' })
-        ),
+          _react2.default.createElement('img', { src: 'http://publishersconvention.com/wp-content/uploads/2014/12/colorful-triangles-background-800x300.jpg', className: 'landing-banner col-xs-12' })
+        )
+      );
+    }
+  }, {
+    key: 'renderSideNavigation',
+    value: function renderSideNavigation() {
+      return _react2.default.createElement(
+        'section',
+        null,
+        _react2.default.createElement(
+          'div',
+          { className: 'hidden-xs col-sm-3 col-lg-2' },
+          'lorem jaskdfja jaksd fjalkdsf'
+        )
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'section',
+        { className: 'container' },
         _react2.default.createElement(
           'section',
-          { className: 'page-content' },
+          { className: 'row' },
           _react2.default.createElement(
             'section',
-            { className: 'container' },
+            null,
+            this.renderBanner()
+          ),
+          _react2.default.createElement(
+            'section',
+            null,
+            this.renderSideNavigation()
+          ),
+          _react2.default.createElement(
+            'section',
+            null,
             this.state.productList ? _react2.default.createElement(_ProductList2.default, { productList: this.state.productList }) : null
           )
         )
@@ -20194,7 +20225,7 @@ var Navbar = function (_React$Component) {
           { className: 'container-fluid' },
           _react2.default.createElement(
             'div',
-            { className: 'navbar-header' },
+            { className: 'navbar-header row' },
             _react2.default.createElement(
               'button',
               { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
@@ -20211,6 +20242,11 @@ var Navbar = function (_React$Component) {
               'a',
               { className: 'navbar-brand', href: '#' },
               this.renderLogo()
+            ),
+            _react2.default.createElement(
+              'span',
+              { className: 'nav-list-search col-xs-4 col-xs-offset-2' },
+              this.renderProductSearch()
             )
           ),
           _react2.default.createElement(
@@ -20223,11 +20259,6 @@ var Navbar = function (_React$Component) {
                 'li',
                 { className: 'nav-list-item' },
                 this.renderUser()
-              ),
-              _react2.default.createElement(
-                'li',
-                { className: 'nav-list-search' },
-                this.renderProductSearch()
               )
             )
           )

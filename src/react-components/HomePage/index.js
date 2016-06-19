@@ -34,15 +34,39 @@ class HomePage extends React.Component {
     }
   }
 
-  render() {
-    return (
+  renderBanner(){
+    return(
       <section>
         <header>
-          <img src="http://publishersconvention.com/wp-content/uploads/2014/12/colorful-triangles-background-800x300.jpg" width="100%" height="170" /> 
+          <img src="http://publishersconvention.com/wp-content/uploads/2014/12/colorful-triangles-background-800x300.jpg" className="landing-banner col-xs-12"/>
         </header>
+      </section> 
+    );
+  }  
 
-        <section className="page-content">
-          <section className="container">
+  renderSideNavigation(){
+    return(
+      <section>
+        <div className="hidden-xs col-sm-3 col-lg-2">
+          lorem jaskdfja jaksd fjalkdsf
+        </div>
+      </section>
+    ) 
+  }
+
+  render() {
+    return (
+      <section className="container">
+        <section className="row">
+          <section>
+            {this.renderBanner()}
+          </section>  
+
+          <section>
+            {this.renderSideNavigation()}
+          </section>
+     
+          <section>
             {
               this.state.productList
               ?
@@ -51,8 +75,9 @@ class HomePage extends React.Component {
               null 
             }
           </section>
-        </section>  
-      </section>  
+   
+        </section> 
+      </section>   
     );
   }
 }

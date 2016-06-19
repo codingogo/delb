@@ -17,8 +17,7 @@ a {
 
 /*Navbar*/
 .container-fluid {
-  padding-right: 0px;
-  padding-left: 0px;
+  background-color: #fff;
 }
 .navbar {
  margin-bottom: 0
@@ -26,7 +25,7 @@ a {
 .brand-logo {
   width: 42px;
   height: 42px;
-  margin-left: 24px;
+  margin-left: 14px;
   margin-top: 4px;
 }
 .brand-title {
@@ -42,15 +41,28 @@ a {
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   background-color: #fff;
 }
-.product-search-box {
-  /*float: right;*/
-}
 .nav-list-item {
   padding: 14px;
 }
 .nav-list-search {
-  padding: 8px;
+  /*padding: 8px;*/
 }
+.product-search-box {
+  padding-top: 8px;
+}
+.product-search {
+  width: 170px;
+  margin-left: 20px;
+}
+
+/*********** LANDING PAGE  *************/
+.landing-banner {
+  height: 170px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 30px;
+}
+
 /*-------- Product List-----------*/
 .product-list {
   margin-top: 20px;
@@ -183,8 +195,15 @@ button:hover {
 }
 
 
-
-
+/************** MEDIA QUERY *************/
+@media(max-width: 767px){
+  .navbar-header {
+    background-color: #fff;
+  }
+  .product-search {
+    width: 120px;
+  }
+}
 
 
 
