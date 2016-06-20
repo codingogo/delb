@@ -1,3 +1,6 @@
+body {
+  background-color: #f1f1f1;
+}
 h1 {
   font-size: 20px;
   line-height: 70;
@@ -15,7 +18,7 @@ a {
   text-decoration: none;
 }
 
-/*Navbar*/
+/************** Navbar **************/
 .container-fluid {
   background-color: #fff;
 }
@@ -23,20 +26,20 @@ a {
  margin-bottom: 0
 }
 .brand-logo {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   margin-left: 14px;
   margin-top: 4px;
 }
 .brand-title {
   position: absolute;
-  margin-top: 16px ;
-  font-size: 22px;
+  margin-top: 15px ;
+  font-size: 18px;
   color: #ff6633;
 }
 .navbar-brand {
   padding: 0;
-  min-height: 40px; 
+  height: 40px; 
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   background-color: #fff;
@@ -45,29 +48,86 @@ a {
   padding: 14px;
 }
 .nav-list-search {
-  /*padding: 8px;*/
+  position: absolute;
+  margin-left: 38px;
 }
 .product-search-box {
   padding-top: 8px;
+  width: 240px;
 }
 .product-search {
-  width: 170px;
+  width: 192px;
   margin-left: 20px;
+  border-radius: 0;
+  height: 30px;
+  margin-top: 1px;
+  padding-left: 8px;
 }
-
+.product-search-btn {
+  height: 30px;
+  margin-top: 1px;
+  padding: 4px 7px;
+  border-radius: 0;
+}
+.product-search-btn:hover {
+  color: #ff6633;
+}
+.fa-search {
+  color: #c4c4c4;
+}
+.navbar-default .navbar-toggle {
+  border: none;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #fff;
+  color: #ff6633;
+}
+.left-navbar {
+  background-color: #fff;
+  height: 500px;
+  padding: 15px;
+}
+.right-nav {
+  background: #fff;
+  height: 500px;
+}
 /*********** LANDING PAGE  *************/
+.landing-banner-cover {
+  padding: 0;
+}
 .landing-banner {
-  height: 170px;
+  height: 240px;
   padding-left: 0px;
   padding-right: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  background: url(https://s3.amazonaws.com/delbapplication/banner.png);
 }
-
-/*-------- Product List-----------*/
+/** Carousel**/
+.coverflow-canvas {
+  background-color: #fff;
+}
+.coverflow__coverflow__2LiXT {
+  background-color: #fff;
+}
+.coverflow__figure__1IP2r {
+  width: 140px;
+  height: 140px;
+}
+.coverflow__stage__22jxv{
+  height: 66%;
+}
+.coverflow__actions__1L_RS .coverflow__button__2fyRi {
+  background-color: #f2f2f2;
+}
+/**************Product List **************/
+.product-list-canvas {
+  width: 600px;
+}
 .product-list {
-  margin-top: 20px;
   list-style: none;
   padding-left: 0;
+  background-color: #fff;
 }
 .product-item {
   padding: 15px;
@@ -197,11 +257,26 @@ button:hover {
 
 /************** MEDIA QUERY *************/
 @media(max-width: 767px){
+
+  /********* NAVBAR ************/
   .navbar-header {
     background-color: #fff;
+    height: 48px;
   }
-  .product-search {
-    width: 120px;
+  .product-search-box {
+    width: 170px;
+  }
+  .product-search{
+    width: 130px;
+  }
+  .navbar-toggle {
+    margin-top: 6px;
+    margin-bottom: 3px;
+  }
+  
+  /********* LANDING PAGE ************/
+  .landing-banner {
+    margin-top: 0;
   }
 }
 

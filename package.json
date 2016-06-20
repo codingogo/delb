@@ -19,5 +19,8 @@
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "watch": "^0.17.1"
+  },
+  "devDependencies": {
+    
   }
 }

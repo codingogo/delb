@@ -1,5 +1,10 @@
 import React from 'react';
+import Coverflow from 'react-coverflow';
+
 import ProductList from '../Product/ProductList';
+import SideNav from '../Navbar/SideNav';
+import RightNav from '../Navbar/RightNav';
+
 
 class HomePage extends React.Component {
   constructor() {
@@ -34,48 +39,56 @@ class HomePage extends React.Component {
     }
   }
 
-  renderBanner(){
+  renderLandingBanner() {
     return(
-      <section>
-        <header>
-          <img src="http://publishersconvention.com/wp-content/uploads/2014/12/colorful-triangles-background-800x300.jpg" className="landing-banner col-xs-12"/>
-        </header>
-      </section> 
-    );
-  }  
-
-  renderSideNavigation(){
-    return(
-      <section>
-        <div className="hidden-xs col-sm-3 col-lg-2">
-          lorem jaskdfja jaksd fjalkdsf
-        </div>
+      <section className="landing-banner">
       </section>
-    ) 
+    );
   }
+
+
+
+  renderProductList() {
+    return(
+      <section className="col-xs-12 col-sm-10 col-md-7 col-lg-8">
+        {
+          this.state.productList
+          ?
+          <ProductList productList={this.state.productList}/>
+          :
+          null 
+        }
+      </section>      
+    );
+  }
+
+  renderSideNav() {
+    return (
+      <SideNav/>
+    );
+  }
+
+  renderRightNav() {
+    return (
+      <RightNav/>
+    );
+  }
+
 
   render() {
     return (
       <section className="container">
         <section className="row">
-          <section>
-            {this.renderBanner()}
-          </section>  
-
-          <section>
-            {this.renderSideNavigation()}
-          </section>
+         
+            {this.renderLandingBanner() }
+        
+          
+            {this.renderSideNav()}
      
-          <section className="col-sm-offset-2 col-sm-10">
-            {
-              this.state.productList
-              ?
-              <ProductList productList={this.state.productList}/>
-              :
-              null 
-            }
-          </section>
-   
+          
+            {this.renderProductList()}
+          
+            {this.renderRightNav()}
         </section> 
       </section>   
     );
