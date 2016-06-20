@@ -38814,7 +38814,7 @@ var HomePage = function (_React$Component) {
     value: function renderProductList() {
       return _react2.default.createElement(
         'section',
-        { className: 'col-xs-12 col-sm-10 col-md-7 col-lg-8' },
+        { className: 'col-xs-12 col-sm-10 col-md-7 col-lg-8 product-list-canvas' },
         this.state.productList ? _react2.default.createElement(_ProductList2.default, { productList: this.state.productList }) : null
       );
     }

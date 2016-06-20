@@ -424,7 +424,7 @@ body {
   color: #444;
 }
 .container {
-  width: 940px;
+  /*width: 940px;*/
   margin: 0 auto;
 }
 h1 {

@@ -50,7 +50,7 @@ class HomePage extends React.Component {
 
   renderProductList() {
     return(
-      <section className="col-xs-12 col-sm-10 col-md-7 col-lg-8">
+      <section className="col-xs-12 col-sm-10 col-md-7 col-lg-8 product-list-canvas">
         {
           this.state.productList
           ?
