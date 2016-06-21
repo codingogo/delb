@@ -3,12 +3,26 @@ import LoginPopup from './LoginPopup';
 import PostPopup from './PostPopup';
 import SideNav from './SideNav';
 
+import Menu from 'react-motion-menu';
+
+
 class Navbar extends React.Component {
   constructor(){
     super();
     this.state = {
-      popupStatus: false
+      popupStatus: false,
+      menu1: {isOpen: false}
     }
+  }
+
+  handleOnOpen(name){
+    this.setState({[name] : {isOpen: true}});
+    console.log('open');
+  }
+
+  handleOnClose(name){
+    this.setState({[name] : {isOpen: false}});
+    console.log('close');
   }
 
   showPopup = () => {
@@ -40,6 +54,37 @@ class Navbar extends React.Component {
     );
   }
 
+  renderMenuBtn() {
+    return (
+      <div>
+        <Menu
+          name="menu1"
+          direction="vertical"
+          onOpen={this.handleOnOpen.bind(this)}
+          onClose={this.handleOnClose.bind(this)}
+          distance={50}
+          width={45}
+          height={45}
+          y={-13}
+          x={-20}
+          customStyle={{
+            color: "#555",
+            textAlign:"center",
+            lineHeight:"45px",
+            backgroundColor: "#fff",
+            border: "1px solid #fefefe",
+            borderRadius: "50%"
+          }}
+          >
+          <span><i className={this.state.menu1.isOpen ? "fa fa-times fa-lg" : "fa fa-bars fa-lg"}></i></span> 
+          <a href="#"><i className="fa fa-home fa-lg"></i></a>  
+          <a href="#"><i className="fa fa-heart fa-lg"></i></a> 
+          <a href="#"><i className="fa fa-user fa-lg"></i></a> 
+        </Menu>
+      </div>
+    );
+  }
+
   renderUser() {
     return (
       <section className="right-side">
@@ -48,8 +93,11 @@ class Navbar extends React.Component {
           ?
           // Display Post link here
           <section>
+
+            {this.renderMenuBtn()}
+
             <span>
-              <a href="#" onClick={this.showPopup} className="login-btn">POST</a>
+              <a href="#" onClick={this.showPopup} className="login-btn"><i className="fa fa-plus fa-lg"></i></a>
             </span>
             <PostPopup status={this.state.popupStatus} hidePopup={this.hidePopup}/>
           </section>
@@ -65,15 +113,16 @@ class Navbar extends React.Component {
   }
 
   renderToggleNav() {
-    return (
+    return (    
       <section className="navbar navbar-default">
         <div className="container-fluid">
           <div className="navbar-header row"> 
             <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
               <i className="fa fa-bars fa-lg" aria-hidden="true"></i>
             </button>
-            <a className="navbar-brand" href="#">{this.renderLogo()}</a>
-            <span className="nav-list-search">{this.renderProductSearch()}</span>        
+
+            <a className="navbar-brand" href="/">{this.renderLogo()}</a>
+            <span className="nav-list-search">{this.renderProductSearch()}</span>       
           </div> 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav navbar-right">
@@ -82,7 +131,7 @@ class Navbar extends React.Component {
           </div>
         </div>           
       </section>
-    )
+    );
   }
 
   render(){

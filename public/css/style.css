@@ -1,5 +1,6 @@
 body {
   background-color: #f1f1f1;
+  color: #999;
 }
 h1 {
   font-size: 20px;
@@ -11,12 +12,28 @@ h2 {
   font-size: 20px;
   font-weight: 500;
 }
+h5 {
+  margin-top: 5px;
+  color: #999;
+}
 
 a {
   font-size: 13px;
-  color: #444;
+  color: #555;
   text-decoration: none;
 }
+a:hover {
+  color: #ff6633;
+  text-decoration: none;
+}
+
+.fa-bars, .fa-home, .fa-heart, .fa-user {
+  color: #ff6633;
+}
+.fa-bars:hover, .fa-home:hover, .fa-heart:hover, .fa-user:hover, .fa-times:hover {
+  color: #555;
+}
+
 
 /************** Navbar **************/
 .container-fluid {
@@ -91,34 +108,44 @@ a {
   background: #fff;
   height: 500px;
 }
+.category {
+  list-style: none;
+  padding: 1px 0;
+  cursor: crosshair;
+}
+.category-canvas {
+  padding-left: 0;
+}
+.category-title {
+  border-bottom: 1px solid #e5e5e5;
+  width: 90px;
+  padding-bottom: 5px;
+  color: #bbb;
+}
+.capital {
+/*  color: #777;
+  font-weight: 500;*/
+}
+.menu {
+  z-index: 999;
+}
+
+
 /*********** LANDING PAGE  *************/
 .landing-banner-cover {
   padding: 0;
 }
 .landing-banner {
-  height: 240px;
+  height: 290px;
   padding-left: 0px;
   padding-right: 0px;
   margin-bottom: 15px;
   margin-top: 15px;
   background: url(https://s3.amazonaws.com/delbapplication/banner.png);
 }
-/** Carousel**/
-.coverflow-canvas {
-  background-color: #fff;
-}
-.coverflow__coverflow__2LiXT {
-  background-color: #fff;
-}
-.coverflow__figure__1IP2r {
-  width: 140px;
-  height: 140px;
-}
-.coverflow__stage__22jxv{
-  height: 66%;
-}
-.coverflow__actions__1L_RS .coverflow__button__2fyRi {
-  background-color: #f2f2f2;
+.bars {
+  z-index: 999;
+  color: #fff;
 }
 /**************Product List **************/
 .product-list-canvas {
@@ -201,15 +228,21 @@ a {
   left: 0;
   background-color: #fff;
   opacity: 0.97;
+  z-index: 99;
 }
 .popup .popup-wrap img {
   position: fixed;
   top: 40px;
   left: 40px;
   cursor: pointer;
+  
 }
 .popup .popup-content {
   position: fixed;
+  z-index: 999;
+  padding: 25px 25px 45px 0px;
+  background: #efefef;
+  border-radius: 5px;  
 }
 .popup .popup-content > h1 {
   position: absolute;
@@ -222,17 +255,19 @@ a {
 .absolute {
   position: absolute;
 }
-button {
-  border-radius: 20px;
-  padding: 8px 20px;
-  font-size: 13px;
+button.post-btn {
+  margin-top: 10px;
+  padding: 10px 70px;
   font-weight: 500;
   outline: 0;
   border: 0;
+  background-color: #ff6633;
+  color: white;
 }
 
 button:hover {
   cursor: pointer;
+  background-color: #e5663b;
 }
 .popup-content.login-popup {
   text-align: center;
@@ -248,12 +283,14 @@ button:hover {
 }
 .post-popup {
   text-align: center;
-  width: 240px;
+  width: 340px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
+.post-header {
+  padding-bottom: 15px;
+}
 
 /************** MEDIA QUERY *************/
 @media(max-width: 767px){
@@ -273,18 +310,37 @@ button:hover {
     margin-top: 6px;
     margin-bottom: 3px;
   }
+  /************* POP UPS *************/
+  .popup .popup-content {
+    padding: 5px 15px 25px 15px;
+  }
+  .post-btn {
+    width: 100%;
+    margin-top: 0;
+  }
+  .padding-zero-left {
+    padding-left: 0;
+  }
   /********* LANDING PAGE ************/
   .landing-banner {
     margin-top: 0;
   }
+  .control-label {
+    text-align: right;
+  }
 }
 
-@media(min-width: 768px) and (max-width: 991px){
+@media(min-width: 768px) and (max-width: 1199px){
   .product-list-canvas{
     padding-right: 0;
   }
 }
 
+@media(min-width: 768px){
+  .post-popup {
+    width: 600px;
+  }
+}
 
 
 

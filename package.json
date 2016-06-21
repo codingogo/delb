@@ -18,9 +18,8 @@
     "express": "^4.13.4",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "react-motion-menu": "^0.2.1",
     "watch": "^0.17.1"
   },
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }

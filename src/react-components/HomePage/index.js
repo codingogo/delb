@@ -1,5 +1,4 @@
 import React from 'react';
-import Coverflow from 'react-coverflow';
 
 import ProductList from '../Product/ProductList';
 import SideNav from '../Navbar/SideNav';
@@ -46,11 +45,9 @@ class HomePage extends React.Component {
     );
   }
 
-
-
   renderProductList() {
     return(
-      <section className="col-xs-12 col-sm-10 col-md-7 col-lg-8 product-list-canvas">
+      <section className="col-xs-12 col-sm-10 col-md-10 col-lg-8 product-list-canvas">
         {
           this.state.productList
           ?
