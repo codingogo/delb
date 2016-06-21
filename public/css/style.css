@@ -26,11 +26,14 @@ a:hover {
   color: #ff6633;
   text-decoration: none;
 }
+.right-align {
+  float: right;
+}
 
-.fa-bars, .fa-home, .fa-heart, .fa-user {
+.fa-bars, .fa-cog, .fa-heart, .fa-user {
   color: #ff6633;
 }
-.fa-bars:hover, .fa-home:hover, .fa-heart:hover, .fa-user:hover, .fa-times:hover {
+.fa-bars:hover, .fa-cog:hover, .fa-heart:hover, .fa-user:hover, .fa-times:hover {
   color: #555;
 }
 
@@ -40,7 +43,9 @@ a:hover {
   background-color: #fff;
 }
 .navbar {
- margin-bottom: 0
+ margin-bottom: 0;
+ background-color: #fff;
+ height: 50px;
 }
 .brand-logo {
   width: 38px;
@@ -55,7 +60,7 @@ a:hover {
   color: #ff6633;
 }
 .navbar-brand {
-  padding: 0;
+  padding: 0 0 0 15px;
   height: 40px; 
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -129,8 +134,20 @@ a:hover {
 .menu {
   z-index: 999;
 }
-
-
+.post-add {
+  position: absolute;
+  top: 15px;
+  right: 75px;
+}
+.menu-motion-btn {
+  position: absolute;
+  right: 40px;
+  top: 14px;
+  cursor: pointer;
+}
+.login-btn {
+  cursor: pointer;
+}
 /*********** LANDING PAGE  *************/
 .landing-banner-cover {
   padding: 0;

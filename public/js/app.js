@@ -22065,7 +22065,7 @@ var Navbar = function (_React$Component) {
           _react2.default.createElement(
             'a',
             { href: '#' },
-            _react2.default.createElement('i', { className: 'fa fa-home fa-lg' })
+            _react2.default.createElement('i', { className: 'fa fa-user fa-lg' })
           ),
           _react2.default.createElement(
             'a',
@@ -22075,8 +22075,21 @@ var Navbar = function (_React$Component) {
           _react2.default.createElement(
             'a',
             { href: '#' },
-            _react2.default.createElement('i', { className: 'fa fa-user fa-lg' })
+            _react2.default.createElement('i', { className: 'fa fa-cog fa-lg' })
           )
+        )
+      );
+    }
+  }, {
+    key: 'renderPost',
+    value: function renderPost() {
+      return _react2.default.createElement(
+        'span',
+        null,
+        _react2.default.createElement(
+          'a',
+          { href: '#', onClick: this.showPopup, className: 'login-btn' },
+          _react2.default.createElement('i', { className: 'fa fa-plus fa-lg' })
         )
       );
     }
@@ -22085,21 +22098,21 @@ var Navbar = function (_React$Component) {
     value: function renderUser() {
       return _react2.default.createElement(
         'section',
-        { className: 'right-side' },
+        null,
         this.props.user ?
         // Display Post link here
         _react2.default.createElement(
           'section',
           null,
-          this.renderMenuBtn(),
           _react2.default.createElement(
             'span',
-            null,
-            _react2.default.createElement(
-              'a',
-              { href: '#', onClick: this.showPopup, className: 'login-btn' },
-              _react2.default.createElement('i', { className: 'fa fa-plus fa-lg' })
-            )
+            { className: 'post-add' },
+            this.renderPost()
+          ),
+          _react2.default.createElement(
+            'span',
+            { className: 'menu-motion-btn' },
+            this.renderMenuBtn()
           ),
           _react2.default.createElement(_PostPopup2.default, { status: this.state.popupStatus, hidePopup: this.hidePopup })
         ) :
@@ -22121,41 +22134,24 @@ var Navbar = function (_React$Component) {
     value: function renderToggleNav() {
       return _react2.default.createElement(
         'section',
-        { className: 'navbar navbar-default' },
+        { className: 'navbar' },
         _react2.default.createElement(
           'div',
-          { className: 'container-fluid' },
+          { className: 'navbar-header row' },
           _react2.default.createElement(
-            'div',
-            { className: 'navbar-header row' },
-            _react2.default.createElement(
-              'button',
-              { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
-              _react2.default.createElement('i', { className: 'fa fa-bars fa-lg', 'aria-hidden': 'true' })
-            ),
-            _react2.default.createElement(
-              'a',
-              { className: 'navbar-brand', href: '/' },
-              this.renderLogo()
-            ),
-            _react2.default.createElement(
-              'span',
-              { className: 'nav-list-search' },
-              this.renderProductSearch()
-            )
+            'a',
+            { className: 'navbar-brand', href: '/' },
+            this.renderLogo()
           ),
           _react2.default.createElement(
-            'div',
-            { className: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' },
-            _react2.default.createElement(
-              'ul',
-              { className: 'nav navbar-nav navbar-right' },
-              _react2.default.createElement(
-                'li',
-                { className: 'nav-list-item' },
-                this.renderUser()
-              )
-            )
+            'span',
+            { className: 'nav-list-search' },
+            this.renderProductSearch()
+          ),
+          _react2.default.createElement(
+            'span',
+            { className: 'right-align' },
+            this.renderUser()
           )
         )
       );

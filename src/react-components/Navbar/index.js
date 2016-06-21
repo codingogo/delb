@@ -77,28 +77,33 @@ class Navbar extends React.Component {
           }}
           >
           <span><i className={this.state.menu1.isOpen ? "fa fa-times fa-lg" : "fa fa-bars fa-lg"}></i></span> 
-          <a href="#"><i className="fa fa-home fa-lg"></i></a>  
-          <a href="#"><i className="fa fa-heart fa-lg"></i></a> 
           <a href="#"><i className="fa fa-user fa-lg"></i></a> 
+          <a href="#"><i className="fa fa-heart fa-lg"></i></a> 
+          <a href="#"><i className="fa fa-cog fa-lg"></i></a>  
         </Menu>
       </div>
     );
   }
 
+  renderPost(){
+    return(
+      <span>
+        <a href="#" onClick={this.showPopup} className="login-btn"><i className="fa fa-plus fa-lg"></i></a>
+      </span>      
+    );
+  }
+
   renderUser() {
     return (
-      <section className="right-side">
+      <section>
         {
           this.props.user
           ?
           // Display Post link here
           <section>
+              <span className="post-add">{this.renderPost()}</span>
+              <span className="menu-motion-btn">{this.renderMenuBtn()}</span>
 
-            {this.renderMenuBtn()}
-
-            <span>
-              <a href="#" onClick={this.showPopup} className="login-btn"><i className="fa fa-plus fa-lg"></i></a>
-            </span>
             <PostPopup status={this.state.popupStatus} hidePopup={this.hidePopup}/>
           </section>
           :
@@ -114,21 +119,17 @@ class Navbar extends React.Component {
 
   renderToggleNav() {
     return (    
-      <section className="navbar navbar-default">
-        <div className="container-fluid">
+      <section className="navbar">
+        
           <div className="navbar-header row"> 
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <i className="fa fa-bars fa-lg" aria-hidden="true"></i>
-            </button>
+       
 
             <a className="navbar-brand" href="/">{this.renderLogo()}</a>
             <span className="nav-list-search">{this.renderProductSearch()}</span>       
-          </div> 
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul className="nav navbar-nav navbar-right">
-              <li className="nav-list-item">{this.renderUser()}</li>
-            </ul>  
-          </div>
+          
+            <span className="right-align">{this.renderUser()}</span>
+           
+          
         </div>           
       </section>
     );
