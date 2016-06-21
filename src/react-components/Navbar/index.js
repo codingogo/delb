@@ -79,7 +79,8 @@ class Navbar extends React.Component {
           <span><i className={this.state.menu1.isOpen ? "fa fa-times fa-lg" : "fa fa-bars fa-lg"}></i></span> 
           <a href="#"><i className="fa fa-user fa-lg"></i></a> 
           <a href="#"><i className="fa fa-heart fa-lg"></i></a> 
-          <a href="#"><i className="fa fa-cog fa-lg"></i></a>  
+          <a href="#"><i className="fa fa-cog fa-lg"></i></a> 
+          <a href="#"><i className="fa fa-sign-out fa-lg"></i></a>  
         </Menu>
       </div>
     );
@@ -88,7 +89,7 @@ class Navbar extends React.Component {
   renderPost(){
     return(
       <span>
-        <a href="#" onClick={this.showPopup} className="login-btn"><i className="fa fa-plus fa-lg"></i></a>
+        <a href="#" onClick={this.showPopup} className="login-btn plus">+</a>
       </span>      
     );
   }
