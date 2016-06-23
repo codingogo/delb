@@ -1,11 +1,23 @@
 import React from 'react';
+import ProductPopup from './ProductPopup';
+import Upvote from './Upvote';
 
 class ProductItem extends React.Component {
-  renderUpvoteButton(){
-    return (
-        <a className="upvote-button" href="#"><span><i className="fa fa-sort-asc"></i></span>{this.props.upvote}</a>
-    );
+  constructor(){
+    super();
+    this.state = {
+      productPopupStatus: false
+    }
   }
+
+  showProductPopup = () => {
+    this.setState({productPopupStatus: true});
+  };
+
+  hideProductPopup = () => {
+    this.setState({productPopupStatus: false});
+  };  
+
 
   renderNewWindowIcon(){
     return (
@@ -16,7 +28,9 @@ class ProductItem extends React.Component {
   renderInfoSession(){
     return (
       <section className="product-item-info">
-        <a href="#"><h2>{this.props.name}</h2></a>
+        <a href="#" onClick={this.showProductPopup}>
+          <h2>{this.props.name}</h2>
+        </a>
         <p>{this.props.description}</p>
         <a href="#"><img className="small-avatar" src={this.props.maker.avatar}/></a>
       </section>      
@@ -26,10 +40,11 @@ class ProductItem extends React.Component {
   render() {
     return (
       <li className="product-item">
-        {this.renderUpvoteButton()}
+        <Upvote {...this.props} />
         <img className="product-item-media" src={this.props.media} />  
         {this.renderInfoSession()}
-        {this.renderNewWindowIcon()}      
+        {this.renderNewWindowIcon()}  
+        <ProductPopup {...this.props} status={this.state.productPopupStatus} hidePopup={this.hideProductPopup} />
       </li>
     );
   }

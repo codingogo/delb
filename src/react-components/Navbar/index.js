@@ -1,8 +1,9 @@
 import React from 'react';
 import LoginPopup from './LoginPopup';
 import PostPopup from './PostPopup';
-import SideNav from './SideNav';
+import ProfileMenu from './ProfileMenu';
 
+import SideNav from './SideNav';
 import Menu from 'react-motion-menu';
 
 
@@ -89,9 +90,17 @@ class Navbar extends React.Component {
   renderPost(){
     return(
       <span>
-        <a href="#" onClick={this.showPopup} className="login-btn plus">+</a>
+        <a href="#" onClick={this.showPopup} className="plus">+</a>
       </span>      
     );
+  }
+
+  renderMessageBox(){
+    return(
+      <span>
+        <ProfileMenu user={this.props.user}/>
+      </span>
+    )
   }
 
   renderUser() {
@@ -102,10 +111,11 @@ class Navbar extends React.Component {
           ?
           // Display Post link here
           <section>
+              <span className="message-box">{this.renderMessageBox()}</span>
               <span className="post-add">{this.renderPost()}</span>
               <span className="menu-motion-btn">{this.renderMenuBtn()}</span>
 
-            <PostPopup status={this.state.popupStatus} hidePopup={this.hidePopup}/>
+            <PostPopup user={this.props.user} status={this.state.popupStatus} hidePopup={this.hidePopup}/>
           </section>
           :
           // Display Login link here

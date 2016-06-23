@@ -11,36 +11,52 @@ class SideNav extends React.Component {
           id: 1,
           capital: 'D',
           name: 'esign',
-          url: ''
+          url: '',
+          showWhichCategory: {
+            showDesign: true,
+            showEntertainment: false,
+            showLifestyle: false,
+            showBeauty: false
+          }
         },
         {
           id: 2,
           capital: 'E',
           name: 'ntertainment',
-          url: ''
+          url: '',
+          showWhichCategory: {
+            showDesign: false,
+            showEntertainment: true,
+            showLifestyle: false,
+            showBeauty: false
+          }
         },
         {
           id: 3,
           capital: 'L',
           name: 'ifestyle',
-          url: ''
+          url: '',
+          showWhichCategory: {
+            showDesign: false,
+            showEntertainment: false,
+            showLifestyle: true,
+            showBeauty: false
+          }
         },
         {
           id: 4,
           capital: 'B',
           name: 'eauty',
-          url: ''
+          url: '',
+          showWhichCategory: {
+            showDesign: false,
+            showEntertainment: false,
+            showLifestyle: false,
+            showBeauty: true
+          }
         }
       ]
     }
-  }
-  handleOnOpen(name){
-    this.setState({[name] : {isOpen: true}});
-    console.log('open');
-  }
-  handleOnClose(name){
-    this.setState({[name] : {isOpen: false}});
-    console.log('close');
   }
 
   renderCategory(){
@@ -52,7 +68,7 @@ class SideNav extends React.Component {
               return <CategoryList key={idx} {...item}/>
             })
           } 
-        </ul>            
+        </ul>           
       </section>
     );
   }
