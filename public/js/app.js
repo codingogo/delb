@@ -40616,6 +40616,7 @@ var PostPopup = function (_React$Component) {
         link: _this.refs.link.value,
         description: _this.refs.description.value,
         media: _this.refs.media.value,
+        category: _this.refs.category.value,
         upvote: 0,
         maker: {
           name: _this.props.user.name,
@@ -40719,22 +40720,22 @@ var PostPopup = function (_React$Component) {
               { className: 'col-xs-8 col-sm-9 select-category' },
               _react2.default.createElement(
                 'option',
-                { value: 'design', className: 'option-category' },
+                { ref: 'category', value: 'design', className: 'option-category' },
                 'design'
               ),
               _react2.default.createElement(
                 'option',
-                { value: 'entertainment' },
+                { ref: 'category', value: 'entertainment' },
                 'entertainment'
               ),
               _react2.default.createElement(
                 'option',
-                { value: 'lifestyle' },
+                { ref: 'category', value: 'lifestyle' },
                 'lifestyle'
               ),
               _react2.default.createElement(
                 'option',
-                { value: 'beauty' },
+                { ref: 'category', value: 'beauty' },
                 'beauty'
               )
             )
@@ -41109,18 +41110,22 @@ var ProductItem = function (_React$Component) {
   }, {
     key: 'renderInfoSession',
     value: function renderInfoSession() {
+      var text = this.props.description;
+      var length = 42;
+      var trimmedText = text.length > length ? text.substring(0, length - 3) + "..." : text;
+      console.log(trimmedText);
       return _react2.default.createElement(
         'section',
         { className: 'product-item-info' },
         _react2.default.createElement(
-          'h2',
+          'h5',
           { onClick: this.showProductPopup, className: 'clickable' },
           this.props.name
         ),
         _react2.default.createElement(
           'p',
-          null,
-          this.props.description
+          { 'class': 'trimmed-text' },
+          trimmedText
         ),
         _react2.default.createElement(
           'a',
@@ -41136,9 +41141,22 @@ var ProductItem = function (_React$Component) {
         'li',
         { className: 'product-item' },
         _react2.default.createElement(_Upvote2.default, this.props),
-        _react2.default.createElement('img', { className: 'product-item-media clickable', src: this.props.media, onClick: this.showProductPopup }),
-        this.renderInfoSession(),
-        this.renderNewWindowIcon(),
+        _react2.default.createElement(
+          'div',
+          { className: 'product-img' },
+          _react2.default.createElement('span', null),
+          _react2.default.createElement('img', { className: 'product-item-media clickable', src: this.props.media, onClick: this.showProductPopup })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'info-area' },
+          this.renderInfoSession()
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'new-window-area' },
+          this.renderNewWindowIcon()
+        ),
         _react2.default.createElement(_ProductPopup2.default, _extends({}, this.props, { status: this.state.productPopupStatus, hidePopup: this.hideProductPopup }))
       );
     }

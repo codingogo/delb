@@ -10,6 +10,7 @@ class PostPopup extends React.Component{
       link: this.refs.link.value,
       description: this.refs.description.value,
       media: this.refs.media.value,
+      category: this.refs.category.value,
       upvote: 0,
       maker: {
         name: this.props.user.name,
@@ -59,10 +60,10 @@ class PostPopup extends React.Component{
           <div className="form-group">
             <label htmlFor="listingCategory" className="col-xs-4 col-sm-3 control-label">Category:</label>
             <select className="col-xs-8 col-sm-9 select-category">
-              <option value="design" className="option-category">design</option>
-              <option value="entertainment">entertainment</option>
-              <option value="lifestyle">lifestyle</option>
-              <option value="beauty">beauty</option>
+              <option ref="category" value="design" className="option-category">design</option>
+              <option ref="category" value="entertainment">entertainment</option>
+              <option ref="category" value="lifestyle">lifestyle</option>
+              <option ref="category" value="beauty">beauty</option>
             </select> 
           </div>   
 
