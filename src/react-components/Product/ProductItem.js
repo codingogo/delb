@@ -28,9 +28,7 @@ class ProductItem extends React.Component {
   renderInfoSession(){
     return (
       <section className="product-item-info">
-        <a href="#" onClick={this.showProductPopup}>
-          <h2>{this.props.name}</h2>
-        </a>
+        <h2 onClick={this.showProductPopup} className="clickable">{this.props.name}</h2>
         <p>{this.props.description}</p>
         <a href="#"><img className="small-avatar" src={this.props.maker.avatar}/></a>
       </section>      
@@ -40,8 +38,8 @@ class ProductItem extends React.Component {
   render() {
     return (
       <li className="product-item">
-        <Upvote {...this.props} />
-        <img className="product-item-media" src={this.props.media} />  
+        <Upvote {...this.props} />        
+        <img className="product-item-media clickable" src={this.props.media} onClick={this.showProductPopup} />         
         {this.renderInfoSession()}
         {this.renderNewWindowIcon()}  
         <ProductPopup {...this.props} status={this.state.productPopupStatus} hidePopup={this.hideProductPopup} />

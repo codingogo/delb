@@ -1,6 +1,6 @@
 body {
   background-color: #f1f1f1;
-  color: #999;
+  color: #777;
 }
 h1 {
   font-size: 20px;
@@ -34,14 +34,16 @@ a:hover {
   color: #ff6633;
 }
 .fa-bars:hover, .fa-cog:hover, .fa-heart:hover, .fa-user:hover, .fa-times:hover, .fa-sign-out:hover {
-  color: #555;
+  color: #111;
 }
 .medium-avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-
+.clickable {
+  cursor: pointer;
+}
 /************** Navbar **************/
 .container-fluid {
   background-color: #fff;
@@ -142,11 +144,11 @@ a:hover {
 .post-add {
   position: absolute;
   top: 4px;
-  right: 116px;
+  right: 80px;
 }
 .menu-motion-btn {
   position: absolute;
-  right: 40px;
+  right: 44px;
   top: 14px;
   cursor: pointer;
 }
@@ -301,17 +303,22 @@ a:hover {
   text-align: center;
   padding-top: 12px;
 }
+.popup-close:hover {
+  color: #ddd;
+  background-color: #888;
+}
 .absolute {
   position: absolute;
 }
 button.post-btn {
   margin-top: 10px;
-  padding: 10px 70px;
+  padding: 12px 70px;
   font-weight: 500;
   outline: 0;
   border: 0;
   background-color: #ff6633;
   color: white;
+  border-radius: 2px;
 }
 
 button:hover {
@@ -430,7 +437,21 @@ button:hover {
 .comment-list li > section p {
   font-size: 14px;
 }
-
+select.select-category {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  background: url(../img/dropdown.png);
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  width: 170px;
+  margin-left: 15px;
+  height: 36px;
+  margin-top: 1px;
+}
 /************* TOP TEN LIST***************/
 .topten {
   list-style: none;
@@ -489,8 +510,8 @@ button:hover {
   border-radius: 4px;
 }
 .profile-img {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
 }
 
@@ -532,6 +553,10 @@ button:hover {
   }
   .control-label {
     text-align: right;
+  }
+  /***** New Post Pop Up****/
+  select.select-category {
+    margin-left: 0;
   }
 }
 

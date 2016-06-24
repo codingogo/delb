@@ -1,10 +1,11 @@
 import React from 'react';
 import LoginPopup from './LoginPopup';
 import PostPopup from './PostPopup';
-import ProfileMenu from './ProfileMenu';
+
 
 import SideNav from '../LeftNav';
 import Menu from 'react-motion-menu';
+import Actions from '../../actions';
 
 
 class Navbar extends React.Component {
@@ -18,12 +19,10 @@ class Navbar extends React.Component {
 
   handleOnOpen(name){
     this.setState({[name] : {isOpen: true}});
-    console.log('open');
   }
 
   handleOnClose(name){
     this.setState({[name] : {isOpen: false}});
-    console.log('close');
   }
 
   showPopup = () => {
@@ -32,6 +31,12 @@ class Navbar extends React.Component {
 
   hidePopup = () => {
     this.setState({popupStatus: false});
+  };
+
+  handleLogout = (e) => {
+    this.setState({menu1: {isOpen: false}});
+    e.preventDefault();
+    Actions.logout();
   };
 
   renderProductSearch(){
@@ -77,11 +82,20 @@ class Navbar extends React.Component {
             borderRadius: "50%"
           }}
           >
-          <span><i className={this.state.menu1.isOpen ? "fa fa-times fa-lg" : "fa fa-bars fa-lg"}></i></span> 
+          <span>
+            {
+              this.state.menu1.isOpen 
+              ?
+              <a href="#"><i className="fa fa-times fa-lg"></i></a> 
+              :
+              <img src={this.props.user.avatar} className="profile-img"/>
+            }  
+          </span>
+          
           <a href="#"><i className="fa fa-user fa-lg"></i></a> 
           <a href="#"><i className="fa fa-heart fa-lg"></i></a> 
           <a href="#"><i className="fa fa-cog fa-lg"></i></a> 
-          <a href="#"><i className="fa fa-sign-out fa-lg"></i></a>  
+          <a href="#" onClick={this.handleLogout}><i className="fa fa-sign-out fa-lg"></i></a> 
         </Menu>
       </div>
     );
@@ -95,14 +109,6 @@ class Navbar extends React.Component {
     );
   }
 
-  renderMessageBox(){
-    return(
-      <span>
-        <ProfileMenu user={this.props.user}/>
-      </span>
-    )
-  }
-
   renderUser() {
     return (
       <section>
@@ -111,7 +117,6 @@ class Navbar extends React.Component {
           ?
           // Display Post link here
           <section>
-              <span className="message-box">{this.renderMessageBox()}</span>
               <span className="post-add">{this.renderPost()}</span>
               <span className="menu-motion-btn">{this.renderMenuBtn()}</span>
 
@@ -131,16 +136,10 @@ class Navbar extends React.Component {
   renderToggleNav() {
     return (    
       <section className="navbar">
-        
           <div className="navbar-header row"> 
-       
-
             <a className="navbar-brand" href="/">{this.renderLogo()}</a>
             <span className="nav-list-search">{this.renderProductSearch()}</span>       
-          
             <span className="right-align">{this.renderUser()}</span>
-           
-          
         </div>           
       </section>
     );

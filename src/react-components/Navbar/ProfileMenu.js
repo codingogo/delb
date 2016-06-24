@@ -17,7 +17,7 @@ class ProfileMenu extends React.Component{
 		}
 	};
 
-	handleClickOutsite = (e) => {
+	handleClickOutside = (e) => {
 		if (e.target != this.refs.profileBtn){
 			this.setState({showProfileNav: false});
 		}
@@ -29,11 +29,11 @@ class ProfileMenu extends React.Component{
 	};
 
 	componentWillMount() {
-		window.addEventListener("click", this.handleClickOutsite, false);
+		window.addEventListener("click", this.handleClickOutside, false);
 	}
 
 	componentWillUnMount() {
-		window.removeEventListener("click", this.handleClickOutsite, false);
+		window.removeEventListener("click", this.handleClickOutside, false);
 	}	
 
 	renderProfileNav() {
