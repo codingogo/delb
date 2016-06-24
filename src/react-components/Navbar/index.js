@@ -3,7 +3,7 @@ import LoginPopup from './LoginPopup';
 import PostPopup from './PostPopup';
 import ProfileMenu from './ProfileMenu';
 
-import SideNav from './SideNav';
+import SideNav from '../LeftNav';
 import Menu from 'react-motion-menu';
 
 

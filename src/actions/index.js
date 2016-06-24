@@ -110,11 +110,9 @@ class Actions {
 				var comments = _(commentsVal).keys().map((commentKey) => {
 					var item = _.clone(commentsVal[commentKey]);
 					item.key = commentKey;
-					// console.log('item', item)
 					return item;
 				})
 				.value();
-console.log('comments', comments);
 				dispatch(comments);
 			});
 		}

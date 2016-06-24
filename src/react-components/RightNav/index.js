@@ -50,7 +50,7 @@ class RightNav extends React.Component {
 
   render() {
     return (
-      <section className="hidden-xs hidden-sm hidden-md col-lg-3 right-nav">
+      <section className="hidden-xs hidden-sm col-md-3 col-lg-3 right-nav">
       	<h5 className="category-title">TOP 10</h5>
       	<div>{this.renderTopTen()}</div>
       </section>

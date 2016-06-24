@@ -7,8 +7,8 @@ import Actions from '../../actions';
 
 @connectToStores
 class ProductPopup extends React.Component{
-	constructor(props){
-		super(props);
+	constructor(){
+		super();
 
 	}
 
@@ -21,8 +21,6 @@ class ProductPopup extends React.Component{
   };	
 
   shouldComponentUpdate(nextProps, nextState) {
-  		// console.log(this.props.pid);
-  		// console.log('nextProps', nextProps);
   	if (nextProps.status && this.props.status != nextProps.status) {
   		Actions.getComments(this.props.pid);
   	}

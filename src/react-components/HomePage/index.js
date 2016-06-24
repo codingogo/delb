@@ -5,8 +5,8 @@ import connectToStores from 'alt-utils/lib/connectToStores';
 import ProductStore from '../../stores/ProductStore';
 import Actions from '../../actions';
 
-import SideNav from '../Navbar/SideNav';
-import RightNav from '../Navbar/RightNav';
+import SideNav from '../LeftNav';
+import RightNav from '../RightNav';
 
 @connectToStores
 class HomePage extends React.Component {
@@ -32,7 +32,7 @@ class HomePage extends React.Component {
 
   renderProductList() {
     return(
-      <section className="col-xs-12 col-sm-10 col-md-10 col-lg-7 product-list-canvas">
+      <section className="col-xs-12 col-sm-10 col-md-7 col-lg-7 product-list-canvas">
         {
           this.props.products
           ?
