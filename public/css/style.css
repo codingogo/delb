@@ -1,3 +1,6 @@
+#example {
+  background-color: orange;
+}
 body {
   background-color: #f1f1f1;
   color: #777;
@@ -557,13 +560,19 @@ select.select-category {
   }
   /********* LANDING PAGE ************/
   .landing-banner {
-    margin-top: 0;
+    margin: 0;
     height: 180px;
   }
   .control-label {
     text-align: right;
   }
-
+  /******* Product Item *********/
+  .product-item-info p.trimmed-text {
+    font-size: 12px;
+  }
+  .product-list-canvas{
+    padding: 0;
+  }
   /***** New Post Pop Up****/
   select.select-category {
     margin-left: 0;

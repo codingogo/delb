@@ -21,7 +21,6 @@ class CategoryList extends React.Component {
 			<section>
 				<a>
 					<li className="category" onClick={this.showSelectCategory}>
-						<span className="capital">{this.props.capital}</span>
 						{this.props.name}
 					</li>
 				</a>	

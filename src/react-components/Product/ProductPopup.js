@@ -35,7 +35,7 @@ class ProductPopup extends React.Component{
 					<p>{this.props.description}</p>
 					<section>
 						<Upvote {...this.props} />
-						<a className="getit-btn" href={this.props.link} target="_blank">GET IT</a>
+						<a className="getit-btn" href={this.props.link} target="_blank">DELB</a>
 					</section>
 				</section>
 			</header>
